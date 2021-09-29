@@ -27,7 +27,7 @@ public class StepController {
     @Autowired
     private StepService stepService;
 
-    @Operation(summary = "Get Recipe By Id", description = "Get Recipes for given Id", tags = {"Step Controller"})
+    @Operation(summary = "Get Step By Id", description = "Get Recipes for given Id", tags = {"Step Controller"})
     @GetMapping("/step/{id}")
     public StepResource getStepById(
             @PathVariable(name = "id") Long stepId) {

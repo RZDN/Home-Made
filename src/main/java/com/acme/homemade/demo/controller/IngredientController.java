@@ -26,7 +26,7 @@ public class IngredientController {
     @Autowired
     private IngredientService ingredientService;
 
-    @Operation(summary = "Get Ingredient", description = "Get All Ingredient by RecipeId", tags = {"Ingredient Controller"})
+    @Operation(summary = "Get List Ingredients By recipe Id", description = "Get All Ingredient by RecipeId", tags = {"Ingredient Controller"})
     @GetMapping("/ingredient/recipes/{recipeId}")
     public Page<IngredientResource> GetAllIngredientByRecipeId(@PathVariable Long recipeId, Pageable pageable){
         Page<Ingredient> ingredientPage = ingredientService.GetAllIngredientByRecipeId(recipeId, pageable);

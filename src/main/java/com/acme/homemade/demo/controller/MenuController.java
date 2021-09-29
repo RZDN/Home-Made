@@ -28,7 +28,7 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @Operation(summary = "Get Menus", description = "Get All UserNoChef by userId", tags = {"Menu Controller"})
+    @Operation(summary = "Get Menus By User Id", description = "Get All UserNoChef by userId", tags = {"Menu Controller"})
     @GetMapping("/menus/users/{userId}")
     public Page<MenuResource> getAllMenuByUserId(@PathVariable Long userId, Pageable pageable){
         Page<Menu> menuPage = menuService.getAllMenuByUserId(userId, pageable);

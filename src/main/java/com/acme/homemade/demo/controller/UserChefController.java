@@ -29,7 +29,7 @@ public class UserChefController {
     @Autowired
     private UserChefService userChefService;
 
-    @Operation(summary = "Get Posts", description = "Get All UserChef by Pages", tags = {"User - Chef Controller"})
+    @Operation(summary = "Get UserChefs", description = "Get All UserChef by Pages", tags = {"User - Chef Controller"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All UserChef returned", content = @Content(mediaType = "application/json"))
     })
@@ -44,7 +44,7 @@ public class UserChefController {
         return new PageImpl<>(resource, pageable, resource.size());
     }
 
-    @Operation(summary = "Get Posts", description = "Get UserChef By Id", tags = {"User - Chef Controller"})
+    @Operation(summary = "Get UserChef By Id", description = "Get UserChef By Id", tags = {"User - Chef Controller"})
     @GetMapping("/userChefs/{id}")
     public UserChefResource getById(@PathVariable(name = "id") Long userChefId) {
         return convertToResource(userChefService.getUserChefById(userChefId));
